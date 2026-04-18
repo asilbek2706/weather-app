@@ -2,3 +2,27 @@
   background-color: #ffffff;
   padding: 32px;
 }
+
+.current-weather__icon {
+  width: 256px;
+  height: 256px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 80px;
+}
+
+.current-weather__degree {
+  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.divider {
+  width: 80%;
+  height: 12px;
+  border-radius: 32px;
+  background-color: var(--background-color);
+  margin: 32px auto 0;
+}

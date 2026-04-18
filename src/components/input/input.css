@@ -1,11 +1,22 @@
 .custom-input {
   padding: 8px 10px;
-  border-radius: 12px;
-  background-color: #dddddd;
   border: none;
   width: 100%;
+  background-color: transparent;
 }
 
 .custom-input:focus-visible {
   outline: none;
+}
+
+.input-wrapper {
+  background-color: var(--background-color);
+  border-radius: 20px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-input-icon {
+  color: var(--primary-color);
 }
