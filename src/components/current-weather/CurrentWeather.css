@@ -1,6 +1,7 @@
 .current-weather {
   background-color: #ffffff;
   padding: 32px;
+  min-height: 100vh;
 }
 
 .current-weather__icon {
@@ -19,10 +20,20 @@
   margin-top: 32px;
 }
 
+.current-weather__status,
+.current-weather__city {
+  text-align: center;
+  font-size: 32px;
+}
+
 .divider {
   width: 80%;
-  height: 12px;
+  height: 8px;
   border-radius: 32px;
   background-color: var(--background-color);
   margin: 32px auto 0;
+}
+
+.current-weather__city {
+  margin-top: 32px;
 }

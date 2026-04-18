@@ -1,0 +1,18 @@
+.current-weather__card {
+  background-color: var(--primary-color);
+  border-radius: 16px;
+  padding: 16px;
+  height: 200px;
+}
+
+.current-weather__card-type {
+  color: white;
+  font-weight: 200;
+  font-size: 36px;
+}
+
+.current-weather__card-value {
+  color: white;
+  margin-top: 16px;
+  font-size: 56px;
+}

@@ -15,9 +15,11 @@ const CurrentWeather = () => {
         <p>31</p>
         <p>°C</p>
       </div>
+      <p className="current-weather__status">Sunny</p>
+
       <div className="divider" />
 
-      <p className="city"></p>
+      <p className="current-weather__city">Tashkent</p>
     </div>
   );
 };
