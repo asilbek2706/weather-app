@@ -1,7 +1,12 @@
+import type { IWeather } from '../../interfaces/weather.interface';
 import Input from '../input/Input';
 import './CurrentWeather.css';
 
-const CurrentWeather = () => {
+interface IProps {
+  weather: IWeather;
+}
+
+const CurrentWeather = ({ weather }: IProps) => {
   return (
     <div className="current-weather">
       <Input />
@@ -12,14 +17,14 @@ const CurrentWeather = () => {
         className="current-weather__icon"
       />
       <div className="current-weather__degree">
-        <p>31</p>
+        <p>{Math.round(weather?.current.temp || 0)}</p>
         <p>°C</p>
       </div>
       <p className="current-weather__status">Sunny</p>
 
       <div className="divider" />
 
-      <p className="current-weather__city">Tashkent</p>
+      <p className="current-weather__city">Bukhara</p>
     </div>
   );
 };
