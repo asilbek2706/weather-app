@@ -1,15 +1,30 @@
+import type { Dispatch, SetStateAction } from 'react';
 import type { IWeather } from '../../interfaces/weather.interface';
 import Input from '../input/Input';
 import './CurrentWeather.css';
 
 interface IProps {
   weather: IWeather;
+  value: string;
+  setInputValue: Dispatch<SetStateAction<string>>;
+  getCurrentWeather: () => Promise<void>;
+  selectedCity: string;
 }
 
-const CurrentWeather = ({ weather }: IProps) => {
+const CurrentWeather = ({
+  weather,
+  setInputValue,
+  value,
+  getCurrentWeather,
+  selectedCity,
+}: IProps) => {
   return (
     <div className="current-weather">
-      <Input />
+      <Input
+        value={value}
+        onChange={(e) => setInputValue(e.target.value)}
+        getCurrentWeather={getCurrentWeather}
+      />
 
       <img
         src="/icons/sunny.png"
@@ -20,11 +35,10 @@ const CurrentWeather = ({ weather }: IProps) => {
         <p>{Math.round(weather?.current.temp || 0)}</p>
         <p>°C</p>
       </div>
-      <p className="current-weather__status">Sunny</p>
 
       <div className="divider" />
 
-      <p className="current-weather__city">Bukhara</p>
+      <p className="current-weather__city">{selectedCity}</p>
     </div>
   );
 };

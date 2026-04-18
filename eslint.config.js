@@ -21,6 +21,7 @@ export default defineConfig([
     },
     rules: {
       'react-hooks/set-state-in-effect': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
 ]);

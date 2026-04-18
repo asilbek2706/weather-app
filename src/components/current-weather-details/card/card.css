@@ -6,13 +6,13 @@
 }
 
 .current-weather__card-type {
-  color: white;
-  font-weight: 200;
+  color: rgb(212, 215, 208);
+  font-weight: 700;
   font-size: 36px;
 }
 
 .current-weather__card-value {
-  color: white;
+  color: rgb(255, 255, 255);
   margin-top: 16px;
-  font-size: 56px;
+  font-size: 36px;
 }

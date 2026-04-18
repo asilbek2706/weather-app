@@ -4,13 +4,17 @@ import CurrentWeatherDetails from './components/current-weather-details/CurrentW
 import CurrentWeather from './components/current-weather/CurrentWeather';
 import getWeather from './api/getWeather';
 import type { IWeather } from './interfaces/weather.interface';
+import Loader from './components/loader/Loader';
 
 function App() {
-  const [weather, setWeather] = useState<IWeather | null>(null);
+  const [weather, setWeather] = useState<IWeather | null>(null),
+    [inputValue, setInputValue] = useState<string>('Bukhara'),
+    [selectedCity, setSelectedCity] = useState<string>(inputValue);
 
   const getCurrentWeather = async () => {
-    const data = await getWeather('Bukhara');
+    const data = await getWeather(inputValue);
     setWeather(data);
+    setSelectedCity(inputValue);
   };
 
   useEffect(() => {
@@ -18,12 +22,18 @@ function App() {
   }, []);
 
   if (!weather) {
-    return null;
+    return <Loader />;
   }
   return (
     <div className="container main">
       {/* Current Weather */}
-      <CurrentWeather weather={weather} />
+      <CurrentWeather
+        weather={weather}
+        value={inputValue}
+        setInputValue={setInputValue}
+        getCurrentWeather={getCurrentWeather}
+        selectedCity={selectedCity}
+      />
 
       {/* Current weather details */}
       <CurrentWeatherDetails weather={weather} />
